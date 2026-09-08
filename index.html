@@ -30,7 +30,7 @@
       line-height: 1.5;
     }
 
-    /* Pantalla de Carga / Intro con Logo Recreado por Código */
+    /* Pantalla de Carga / Animación del Logo Vectorial Exacto */
     #splash-screen {
       position: fixed;
       top: 0;
@@ -51,28 +51,33 @@
       align-items: center;
       gap: 15px;
       background: #ffffff;
-      padding: 20px 30px;
-      border-radius: 50px;
-      box-shadow: 0 0 30px rgba(217, 56, 30, 0.5);
+      padding: 22px 35px;
+      border-radius: 60px;
+      box-shadow: 0 0 35px rgba(217, 56, 30, 0.6);
       animation: pulseLogo 1s infinite alternate;
     }
 
-    .logo-bars {
+    .logo-bars-container {
+      display: flex;
+      gap: 5px;
+    }
+
+    .bar-group {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
     }
 
     .bar-red {
-      width: 25px;
-      height: 12px;
+      width: 14px;
+      height: 35px;
       background-color: #d9232a;
       transform: skewX(-20deg);
     }
 
     .bar-orange {
-      width: 25px;
-      height: 12px;
+      width: 14px;
+      height: 35px;
       background-color: #f7931e;
       transform: skewX(-20deg);
     }
@@ -83,7 +88,7 @@
     }
 
     .splash-brand-title {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       font-weight: 800;
       color: #1c3d5a;
       letter-spacing: 0.5px;
@@ -91,12 +96,12 @@
     }
 
     .splash-brand-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: #64748b;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     @keyframes pulseLogo {
@@ -113,7 +118,7 @@
     header {
       background-color: #ffffff;
       border-bottom: 3px solid var(--accent);
-      padding: 12px 20px;
+      padding: 10px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -129,40 +134,48 @@
       gap: 10px;
     }
 
-    .header-logo-bars {
+    .header-logo-box {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
     }
 
-    .h-bar-red {
-      width: 16px;
-      height: 7px;
+    .header-bar-red {
+      width: 8px;
+      height: 18px;
       background-color: #d9232a;
       transform: skewX(-20deg);
     }
 
-    .h-bar-orange {
-      width: 16px;
-      height: 7px;
+    .header-bar-orange {
+      width: 8px;
+      height: 18px;
       background-color: #f7931e;
       transform: skewX(-20deg);
     }
 
+    .brand-text-mini {
+      display: flex;
+      flex-direction: column;
+    }
+
     .brand-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--primary);
-      letter-spacing: 0.5px;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     .brand-subtitle {
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       color: #64748b;
-      display: block;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
+      margin-top: 2px;
     }
 
     /* Carrusel Superior */
@@ -461,9 +474,11 @@
 
   <div id="splash-screen">
     <div class="splash-logo-box">
-      <div class="logo-bars">
-        <div class="bar-red"></div>
-        <div class="bar-orange"></div>
+      <div class="logo-bars-container">
+        <div class="bar-group">
+          <div class="bar-red"></div>
+          <div class="bar-orange"></div>
+        </div>
       </div>
       <div class="splash-brand-text">
         <span class="splash-brand-title">servitec</span>
@@ -484,13 +499,15 @@
 
   <header>
     <div class="brand-container">
-      <div class="header-logo-bars">
-        <div class="h-bar-red"></div>
-        <div class="h-bar-orange"></div>
+      <div class="header-logo-box">
+        <div class="bar-group" style="gap: 3px;">
+          <div class="header-bar-red"></div>
+          <div class="header-bar-orange"></div>
+        </div>
       </div>
-      <div>
+      <div class="brand-text-mini">
         <span class="brand-title">SERVITEC</span>
-        <span class="brand-subtitle">Calderas & Climatización</span>
+        <span class="brand-subtitle">Calderas</span>
       </div>
     </div>
   </header>
@@ -554,10 +571,10 @@
       <div class="service-category">
         <h3 class="category-header">Calderas</h3>
         <div class="btn-group">
-          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20mantenimiento%20de%20caldera" class="btn btn-wa-service" target="_blank">
+          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20mantenimiento%20de%20calderas" class="btn btn-wa-service" target="_blank">
             Mantenimiento de Calderas
           </a>
-          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20reparación%20de%20caldera" class="btn btn-wa-service" target="_blank">
+          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20reparación%20de%20calderas" class="btn btn-wa-service" target="_blank">
             Reparación de Calderas
           </a>
         </div>
