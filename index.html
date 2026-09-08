@@ -26,7 +26,7 @@
 
     body {
       background-color: var(--dark);
-      color: #334155;
+      color: #ffffff;
       line-height: 1.5;
     }
 
@@ -278,7 +278,7 @@
       border-radius: 5px;
     }
 
-    /* Modal / Cartelito de Quiénes Somos en tonos claros y limpios */
+    /* Modal / Cartelito de Quiénes Somos en tono oscuro cómodo (no quema la vista) */
     #modal-quienes {
       display: none;
       position: fixed;
@@ -286,7 +286,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.8);
       z-index: 2000;
       justify-content: center;
       align-items: center;
@@ -294,7 +294,7 @@
     }
 
     .modal-content {
-      background: #f8fafc;
+      background: #1e293b;
       border: 2px solid var(--accent);
       border-radius: 12px;
       padding: 30px;
@@ -302,12 +302,12 @@
       width: 100%;
       text-align: center;
       position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
     .modal-title {
       font-size: 1.4rem;
-      color: var(--primary);
+      color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 15px;
       font-weight: 800;
@@ -323,7 +323,7 @@
     }
 
     .modal-text {
-      color: #475569;
+      color: #cbd5e1;
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 25px;
@@ -340,7 +340,7 @@
       font-size: 0.9rem;
     }
 
-    /* Sección Principal con Fondo Fijo de la Imagen 1 */
+    /* Sección Principal con Fondo Fijo de la Imagen 1 restaurada oscura */
     .services-section {
       position: relative;
       padding: 60px 20px;
@@ -363,7 +363,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(241, 245, 249, 0.88); /* Fondo clarito translúcido para que combine con el sitio y las fotos */
+      background-color: rgba(15, 23, 42, 0.88); /* Tono oscuro cómodo para que la foto 1 se vea bien y no encandile */
       z-index: 1;
     }
 
@@ -377,7 +377,7 @@
     .section-title {
       text-align: center;
       font-size: 1.5rem;
-      color: var(--primary);
+      color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 30px;
       font-weight: 800;
@@ -393,22 +393,22 @@
       margin: 10px auto 0;
     }
 
-    /* Cajas de servicios en blanco/gris claro combinadas */
+    /* Cajas de servicios en tono oscuro suave y cómodo */
     .service-category {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 10px;
       padding: 25px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .category-header {
       font-size: 1.2rem;
-      color: var(--primary);
+      color: #ffffff;
       margin-bottom: 18px;
       font-weight: 700;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       padding-bottom: 8px;
     }
 
@@ -449,8 +449,8 @@
     }
 
     .btn-wa-service {
-      background-color: #f0fdf4;
-      color: #166534;
+      background-color: rgba(37, 211, 102, 0.15);
+      color: #ffffff;
       border: 1.5px solid var(--whatsapp);
     }
 
@@ -461,7 +461,7 @@
 
     footer {
       background-color: #090d14;
-      color: #94a3b8;
+      color: #64748b;
       text-align: center;
       padding: 20px;
       font-size: 0.85rem;
