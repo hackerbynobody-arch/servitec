@@ -26,7 +26,7 @@
 
     body {
       background-color: var(--dark);
-      color: #ffffff;
+      color: #334155;
       line-height: 1.5;
     }
 
@@ -57,7 +57,6 @@
       animation: pulseLogo 1s infinite alternate;
     }
 
-    /* Barras del logo idénticas a la foto original: una al lado de la otra en horizontal */
     .bars-container-lg {
       display: flex;
       align-items: flex-end;
@@ -77,7 +76,7 @@
       height: 42px;
       background-color: #f7931e;
       transform: skewX(-20deg);
-      margin-top: 6px; /* Desplazamiento vertical exacto del diseño original */
+      margin-top: 6px;
     }
 
     .splash-brand-text {
@@ -279,7 +278,7 @@
       border-radius: 5px;
     }
 
-    /* Modal / Cartelito de Quiénes Somos */
+    /* Modal / Cartelito de Quiénes Somos en tonos claros y limpios */
     #modal-quienes {
       display: none;
       position: fixed;
@@ -287,7 +286,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: 2000;
       justify-content: center;
       align-items: center;
@@ -295,7 +294,7 @@
     }
 
     .modal-content {
-      background: #0f172a;
+      background: #f8fafc;
       border: 2px solid var(--accent);
       border-radius: 12px;
       padding: 30px;
@@ -303,12 +302,12 @@
       width: 100%;
       text-align: center;
       position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .modal-title {
       font-size: 1.4rem;
-      color: #ffffff;
+      color: var(--primary);
       text-transform: uppercase;
       margin-bottom: 15px;
       font-weight: 800;
@@ -324,7 +323,7 @@
     }
 
     .modal-text {
-      color: #cbd5e1;
+      color: #475569;
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 25px;
@@ -341,7 +340,7 @@
       font-size: 0.9rem;
     }
 
-    /* Sección Principal con Fondo Fijo de Collage (Foto 1) */
+    /* Sección Principal con Fondo Fijo de la Imagen 1 */
     .services-section {
       position: relative;
       padding: 60px 20px;
@@ -364,7 +363,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(13, 23, 36, 0.90);
+      background-color: rgba(241, 245, 249, 0.88); /* Fondo clarito translúcido para que combine con el sitio y las fotos */
       z-index: 1;
     }
 
@@ -378,7 +377,7 @@
     .section-title {
       text-align: center;
       font-size: 1.5rem;
-      color: #ffffff;
+      color: var(--primary);
       text-transform: uppercase;
       margin-bottom: 30px;
       font-weight: 800;
@@ -394,20 +393,22 @@
       margin: 10px auto 0;
     }
 
+    /* Cajas de servicios en blanco/gris claro combinadas */
     .service-category {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
       border-radius: 10px;
       padding: 25px;
       margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .category-header {
       font-size: 1.2rem;
-      color: #ffffff;
+      color: var(--primary);
       margin-bottom: 18px;
       font-weight: 700;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid #e2e8f0;
       padding-bottom: 8px;
     }
 
@@ -448,8 +449,8 @@
     }
 
     .btn-wa-service {
-      background-color: rgba(37, 211, 102, 0.2);
-      color: #ffffff;
+      background-color: #f0fdf4;
+      color: #166534;
       border: 1.5px solid var(--whatsapp);
     }
 
@@ -460,7 +461,7 @@
 
     footer {
       background-color: #090d14;
-      color: #64748b;
+      color: #94a3b8;
       text-align: center;
       padding: 20px;
       font-size: 0.85rem;
@@ -478,6 +479,7 @@
 </head>
 <body>
 
+  <!-- Pantalla de Carga / Animación del Logo Grande -->
   <div id="splash-screen">
     <div class="splash-logo-box">
       <div class="bars-container-lg">
@@ -491,6 +493,7 @@
     </div>
   </div>
 
+  <!-- Modal / Cartelito de Quiénes Somos -->
   <div id="modal-quienes">
     <div class="modal-content">
       <h2 class="modal-title">¿Quiénes Somos?</h2>
@@ -501,6 +504,7 @@
     </div>
   </div>
 
+  <!-- Header Navbar con Logo exacto -->
   <header>
     <div class="brand-container">
       <div class="header-logo-box">
@@ -516,6 +520,7 @@
     </div>
   </header>
 
+  <!-- Carrusel Superior (Fotos 2 a 9) -->
   <section class="hero">
     <div class="carousel-slide active">
       <img src="./2.jpg" alt="Servitec 1">
@@ -565,13 +570,15 @@
     </div>
   </section>
 
+  <!-- Sección de Servicios con Fondo Fijo de la Imagen 1 -->
   <section id="servicios" class="services-section">
-    <img src="./1.jpg" alt="Collage Servitec" class="collage-bg">
+    <img src="./1.jpg" alt="Fondo Servitec" class="collage-bg">
     <div class="services-overlay"></div>
 
     <div class="container">
       <h2 class="section-title">Servicios de Mantenimiento y Reparación</h2>
 
+      <!-- Calderas -->
       <div class="service-category">
         <h3 class="category-header">Calderas</h3>
         <div class="btn-group">
@@ -584,6 +591,7 @@
         </div>
       </div>
 
+      <!-- Aires Acondicionados -->
       <div class="service-category">
         <h3 class="category-header">Aires Acondicionados</h3>
         <div class="btn-group">
