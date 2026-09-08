@@ -1,49 +1,136 @@
-<!-- Aires Acondicionados -->
-      <div class="service-category">
-        <h3 class="category-header">Aires Acondicionados</h3>
-        <div class="btn-group">
-          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20mantenimiento%20de%20aire%20acondicionado" class="btn btn-wa-service" target="_blank">
-            Mantenimiento de Aire Acondicionado
-          </a>
-          <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20consultar%20por%20reparación%20de%20aire%20acondicionado" class="btn btn-wa-service" target="_blank">
-            Reparación de Aire Acondicionado
-          </a>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servitec Calderas | Mantenimiento y Reparación</title>
+  <style>
+    :root {
+      --primary: #0b2545;
+      --accent: #d9381e;
+      --dark: #131722;
+      --whatsapp: #25d366;
+      --instagram: #e1306c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--dark); color: #ffffff; line-height: 1.5; }
+    
+    /* Splash Screen */
+    #splash-screen {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: var(--dark); display: flex; flex-direction: column;
+      justify-content: center; align-items: center; z-index: 9999;
+      animation: fadeOut 0.6s ease 1.2s forwards;
+    }
+    .splash-logo {
+      width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--accent);
+      animation: pulseLogo 1s infinite alternate;
+    }
+    .splash-text {
+      margin-top: 12px; color: #fff; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; font-size: 0.85rem;
+    }
+    @keyframes pulseLogo {
+      0% { transform: scale(1); box-shadow: 0 0 10px rgba(217, 56, 30, 0.4); }
+      100% { transform: scale(1.06); box-shadow: 0 0 20px rgba(217, 56, 30, 0.8); }
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; }
+    }
 
+    /* Header */
+    header {
+      background-color: #fff; border-bottom: 3px solid var(--accent);
+      padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+      display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .brand-logo-img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+    .brand-title { font-size: 1.1rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .brand-subtitle { font-size: 0.6rem; color: #64748b; font-weight: 600; text-transform: uppercase; }
+
+    /* Main Container */
+    .container { max-width: 800px; margin: 0 auto; padding: 30px 15px; }
+
+    /* Quiénes Somos */
+    .about-box {
+      background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px; padding: 25px; margin-bottom: 30px; text-align: center;
+    }
+    .about-title { font-size: 1.3rem; color: #fff; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
+    .about-title::after { content: ''; width: 40px; height: 3px; background-color: var(--accent); display: block; margin: 6px auto 0; }
+    .about-text { color: #cbd5e1; font-size: 0.9rem; line-height: 1.5; }
+
+    /* Secciones de Servicios */
+    .section-title {
+      text-align: center; font-size: 1.3rem; color: #fff; text-transform: uppercase;
+      margin: 30px 0 20px; font-weight: 800;
+    }
+    .service-category {
+      background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px; padding: 20px; margin-bottom: 20px;
+    }
+    .category-header { font-size: 1.1rem; color: #fff; margin-bottom: 15px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
+    .btn-group { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .btn-wa-service {
+      display: flex; align-items: center; justify-content: center; padding: 12px 15px;
+      border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem;
+      background-color: rgba(37, 211, 102, 0.15); color: #fff; border: 1.5px solid var(--whatsapp);
+      transition: background 0.2s; text-align: center;
+    }
+    .btn-wa-service:hover { background-color: var(--whatsapp); }
+
+    footer { background-color: #090d14; color: #64748b; text-align: center; padding: 15px; font-size: 0.8rem; border-top: 1px solid #1e293b; }
+  </style>
+</head>
+<body>
+
+  <div id="splash-screen">
+    <img src="./logo.png" alt="Logo" class="splash-logo">
+    <div class="splash-text">Servitec Calderas</div>
+  </div>
+
+  <header>
+    <img src="./logo.png" alt="Logo" class="brand-logo-img">
+    <div>
+      <span class="brand-title">SERVITEC</span>
+      <span class="brand-subtitle">Calderas & Climatización</span>
     </div>
-  </section>
+  </header>
+
+  <div class="container">
+    <div class="about-box">
+      <h2 class="about-title">¿Quiénes Somos?</h2>
+      <p class="about-text">
+        Especialistas en climatización en Neuquén Capital. Brindamos servicio técnico profesional, diagnóstico preciso y mantenimiento preventivo para garantizar la seguridad y el confort en tu hogar o comercio.
+      </p>
+    </div>
+
+    <h2 class="section-title">Servicios de Mantenimiento y Reparación</h2>
+
+    <div class="service-category">
+      <h3 class="category-header">Calderas</h3>
+      <div class="btn-group">
+        <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20mantenimiento%20de%20caldera" class="btn-wa-service" target="_blank">Mantenimiento de Caldera</a>
+        <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20reparación%20de%20caldera" class="btn-wa-service" target="_blank">Reparación de Caldera</a>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h3 class="category-header">Aires Acondicionados</h3>
+      <div class="btn-group">
+        <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20mantenimiento%20de%20aire" class="btn-wa-service" target="_blank">Mantenimiento de Aire Acondicionado</a>
+        <a href="https://wa.me/5492994704203?text=Hola%20Servitec,%20necesito%20reparación%20de%20aire" class="btn-wa-service" target="_blank">Reparación de Aire Acondicionado</a>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; Servitec Calderas - Neuquén Capital y Zonas de Cobertura.</p>
+    <p>&copy; Servitec Calderas - Neuquén Capital.</p>
   </footer>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        dots[i].classList.remove('active');
-      });
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function setSlide(index) {
-      currentSlide = index;
-      showSlide(currentSlide);
-    }
-
-    setInterval(nextSlide, 4500);
-  </script>
 
 </body>
 </html>
