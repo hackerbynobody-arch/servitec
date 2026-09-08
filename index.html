@@ -30,7 +30,7 @@
       line-height: 1.5;
     }
 
-    /* Pantalla de Carga / Animación del Logo Vectorial Exacto */
+    /* Pantalla de Carga / Animación del Logo Grande idéntico al original */
     #splash-screen {
       position: fixed;
       top: 0;
@@ -49,37 +49,35 @@
     .splash-logo-box {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
       background: #ffffff;
-      padding: 22px 35px;
-      border-radius: 60px;
-      box-shadow: 0 0 35px rgba(217, 56, 30, 0.6);
+      padding: 35px 50px;
+      border-radius: 90px;
+      box-shadow: 0 0 50px rgba(217, 56, 30, 0.7);
       animation: pulseLogo 1s infinite alternate;
     }
 
-    .logo-bars-container {
+    /* Barras del logo idénticas a la foto original: una al lado de la otra en horizontal */
+    .bars-container-lg {
       display: flex;
+      align-items: flex-end;
       gap: 5px;
+      height: 48px;
     }
 
-    .bar-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .bar-red {
-      width: 14px;
-      height: 35px;
+    .bar-red-lg {
+      width: 15px;
+      height: 42px;
       background-color: #d9232a;
       transform: skewX(-20deg);
     }
 
-    .bar-orange {
-      width: 14px;
-      height: 35px;
+    .bar-orange-lg {
+      width: 15px;
+      height: 42px;
       background-color: #f7931e;
       transform: skewX(-20deg);
+      margin-top: 6px; /* Desplazamiento vertical exacto del diseño original */
     }
 
     .splash-brand-text {
@@ -88,7 +86,7 @@
     }
 
     .splash-brand-title {
-      font-size: 2.2rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #1c3d5a;
       letter-spacing: 0.5px;
@@ -96,12 +94,12 @@
     }
 
     .splash-brand-subtitle {
-      font-size: 0.85rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #64748b;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     @keyframes pulseLogo {
@@ -137,25 +135,33 @@
     .header-logo-box {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       background: #ffffff;
-      padding: 5px 10px;
-      border-radius: 20px;
+      padding: 6px 14px;
+      border-radius: 24px;
       border: 1px solid #cbd5e1;
     }
 
-    .header-bar-red {
+    .bars-container-sm {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+
+    .bar-red-sm {
       width: 8px;
       height: 18px;
       background-color: #d9232a;
       transform: skewX(-20deg);
     }
 
-    .header-bar-orange {
+    .bar-orange-sm {
       width: 8px;
       height: 18px;
       background-color: #f7931e;
       transform: skewX(-20deg);
+      margin-top: 3px;
     }
 
     .brand-text-mini {
@@ -474,11 +480,9 @@
 
   <div id="splash-screen">
     <div class="splash-logo-box">
-      <div class="logo-bars-container">
-        <div class="bar-group">
-          <div class="bar-red"></div>
-          <div class="bar-orange"></div>
-        </div>
+      <div class="bars-container-lg">
+        <div class="bar-red-lg"></div>
+        <div class="bar-orange-lg"></div>
       </div>
       <div class="splash-brand-text">
         <span class="splash-brand-title">servitec</span>
@@ -500,9 +504,9 @@
   <header>
     <div class="brand-container">
       <div class="header-logo-box">
-        <div class="bar-group" style="gap: 3px;">
-          <div class="header-bar-red"></div>
-          <div class="header-bar-orange"></div>
+        <div class="bars-container-sm">
+          <div class="bar-red-sm"></div>
+          <div class="bar-orange-sm"></div>
         </div>
       </div>
       <div class="brand-text-mini">
