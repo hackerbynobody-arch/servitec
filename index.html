@@ -213,6 +213,68 @@
       border-radius: 5px;
     }
 
+    /* Modal / Cartelito de Quiénes Somos */
+    #modal-quienes {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #0f172a;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .modal-title {
+      font-size: 1.4rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .modal-title::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      display: block;
+      margin: 8px auto 0;
+    }
+
+    .modal-text {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn-close-modal {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
     /* Sección Principal con Fondo Fijo de Collage (Foto 1) */
     .services-section {
       position: relative;
@@ -244,41 +306,6 @@
       position: relative;
       z-index: 2;
       max-width: 850px;
-      margin: 0 auto;
-    }
-
-    /* Sección Quiénes Somos */
-    .about-box {
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      padding: 30px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .about-title {
-      font-size: 1.4rem;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      font-weight: 800;
-    }
-
-    .about-title::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background-color: var(--accent);
-      display: block;
-      margin: 8px auto 0;
-    }
-
-    .about-text {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 700px;
       margin: 0 auto;
     }
 
@@ -335,6 +362,7 @@
       font-size: 0.85rem;
       transition: all 0.25s ease;
       text-align: center;
+      cursor: pointer;
     }
 
     .btn-contact {
@@ -385,13 +413,23 @@
 <body>
 
   <div id="splash-screen">
-    <img src="logo.png" alt="Servitec Logo" class="splash-logo">
+    <img src="./logo.png" alt="Servitec Logo" class="splash-logo" onerror="this.style.display='none'">
     <div class="splash-text">Servitec Calderas</div>
+  </div>
+
+  <div id="modal-quienes">
+    <div class="modal-content">
+      <h2 class="modal-title">¿Quiénes Somos?</h2>
+      <p class="modal-text">
+        Somos especialistas en climatización con amplia trayectoria en Neuquén Capital y zona de influencia. Nos enfocamos exclusivamente en brindar un servicio técnico de excelencia, garantizando el diagnóstico preciso, mantenimiento preventivo y reparación eficiente para asegurar el confort y la seguridad de tu hogar o comercio.
+      </p>
+      <button class="btn-close-modal" onclick="cerrarModal()">Cerrar</button>
+    </div>
   </div>
 
   <header>
     <div class="brand-container">
-      <img src="logo.png" alt="Servitec Logo" class="brand-logo-img">
+      <img src="./logo.png" alt="Servitec Logo" class="brand-logo-img" onerror="this.style.display='none'">
       <div>
         <span class="brand-title">SERVITEC</span>
         <span class="brand-subtitle">Calderas & Climatización</span>
@@ -431,7 +469,7 @@
       
       <div class="hero-btns">
         <a href="#servicios" class="btn btn-contact">Solicitar Servicio ↓</a>
-        <a href="#quienes-somos" class="btn btn-about">Quiénes Somos ↓</a>
+        <button class="btn btn-about" onclick="abrirModal()">Quiénes Somos</button>
         <a href="https://www.instagram.com/servitec.calderas" class="btn btn-ig" target="_blank">Instagram</a>
       </div>
     </div>
@@ -453,14 +491,6 @@
     <div class="services-overlay"></div>
 
     <div class="container">
-
-      <div id="quienes-somos" class="about-box">
-        <h2 class="about-title">¿Quiénes Somos?</h2>
-        <p class="about-text">
-          Somos especialistas en climatización con amplia trayectoria en Neuquén Capital y zona de influencia. Nos enfocamos exclusivamente en brindar un servicio técnico de excelencia, garantizando el diagnóstico preciso, mantenimiento preventivo y reparación eficiente para asegurar el confort y la seguridad de tu hogar o comercio.
-        </p>
-      </div>
-
       <h2 class="section-title">Servicios de Mantenimiento y Reparación</h2>
 
       <div class="service-category">
@@ -495,6 +525,15 @@
   </footer>
 
   <script>
+    // Control del Modal (Cartelito Quiénes Somos)
+    function abrirModal() {
+      document.getElementById('modal-quienes').style.display = 'flex';
+    }
+    function cerrarModal() {
+      document.getElementById('modal-quienes').style.display = 'none';
+    }
+
+    // Control del Carrusel
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
